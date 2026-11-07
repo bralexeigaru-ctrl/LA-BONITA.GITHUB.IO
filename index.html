@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="La Bonita: playeras con estilo para todos.">
+<title>La Bonita | Playeras con estilo</title>
+<style>
+:root{--pink:#ff4f9a;--pink2:#ffd5e6;--cream:#fff9fc;--ink:#29242b;--muted:#716672;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:#fffdfef0;backdrop-filter:blur(12px);border-bottom:1px solid #f6d5e3}
+.nav{max-width:1120px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-weight:950;font-size:1.5rem;letter-spacing:-1px}.logo span{color:var(--pink)}
+nav{display:flex;gap:22px;font-size:.95rem;font-weight:700}
+nav a:hover{color:var(--pink)}
+.pill{display:inline-block;background:var(--pink);color:#fff;padding:12px 19px;border-radius:999px;font-weight:800;box-shadow:0 8px 20px #ff4f9a30;transition:.2s}
+.pill:hover{transform:translateY(-2px);background:#ed287e}
+.hero{overflow:hidden;position:relative;background:linear-gradient(130deg,#ffe5ef,#fff9fc 58%,#ffd1e4)}
+.hero-inner{max-width:1120px;margin:auto;padding:72px 22px 68px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.kicker{color:#d72b79;font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:.78rem}
+h1{font-size:clamp(3rem,7vw,5.7rem);line-height:.94;letter-spacing:-4px;margin:14px 0 20px}
+h1 span{color:var(--pink)}
+.hero p{font-size:1.15rem;line-height:1.7;color:#5d5260;max-width:510px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.secondary{display:inline-block;padding:12px 19px;border:2px solid #f5a9cb;border-radius:999px;font-weight:800;background:#ffffff90}
+.art{min-height:350px;position:relative;display:grid;place-items:center}
+.blob{position:absolute;width:min(350px,85vw);height:310px;background:linear-gradient(145deg,#ffb6d4,#ff6ba9);border-radius:44% 56% 62% 38%/43% 43% 57% 57%;transform:rotate(-7deg)}
+.shirt{position:relative;width:245px;height:260px;filter:drop-shadow(0 20px 15px #8c285333);transform:rotate(5deg)}
+.shirt svg{width:100%;height:100%}
+.sticker{position:absolute;background:#fff;border:2px solid #ffd0e2;padding:12px 15px;border-radius:18px;font-weight:900;box-shadow:0 10px 22px #a62d6020}
+.sticker.one{top:28px;right:0;transform:rotate(8deg)}.sticker.two{bottom:20px;left:0;transform:rotate(-8deg)}
+.section{max-width:1120px;margin:auto;padding:65px 22px}
+.section-heading{text-align:center;margin-bottom:30px}
+.section-heading h2{font-size:clamp(2rem,4vw,3rem);margin:8px 0}
+.section-heading p{color:var(--muted);line-height:1.6}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product{background:white;border:1px solid #f4d7e4;border-radius:24px;padding:16px;box-shadow:0 10px 30px #6d274010;transition:.2s}
+.product:hover{transform:translateY(-5px);box-shadow:0 18px 35px #6d27401a}
+.product-art{height:220px;border-radius:18px;display:grid;place-items:center;position:relative;overflow:hidden}
+.product-art.pink{background:linear-gradient(140deg,#ffe3ef,#ffb7d5)}.product-art.white{background:linear-gradient(140deg,#f5f1f4,#fff)}.product-art.black{background:linear-gradient(140deg,#3e3941,#817782)}
+.mini-shirt{width:130px;height:150px;filter:drop-shadow(0 12px 10px #0002)}
+.product h3{margin:16px 4px 5px;font-size:1.12rem}.product .desc{margin:0 4px;color:var(--muted);font-size:.92rem;line-height:1.5}
+.price-row{display:flex;align-items:center;justify-content:space-between;margin:15px 4px 4px;gap:10px}.price{font-size:1.35rem;font-weight:950;color:#d72b79}
+.order{border:0;background:#ffe3ef;color:#b51f63;font-weight:900;padding:10px 13px;border-radius:12px;cursor:pointer}.order:hover{background:#ffc3dc}
+.banner{background:var(--ink);color:white;border-radius:28px;padding:36px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.banner h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:0 0 10px}.banner p{color:#e8dce5;line-height:1.6;margin:0;max-width:600px}
+.banner .pill{white-space:nowrap}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.feature{background:white;border:1px solid #f4d7e4;padding:22px;border-radius:20px}
+.feature .emoji{font-size:1.8rem}.feature h3{margin:10px 0 6px}.feature p{margin:0;color:var(--muted);line-height:1.55;font-size:.94rem}
+.contact{background:#ffe6f0}
+.contact-inner{max-width:1120px;margin:auto;padding:58px 22px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.contact h2{font-size:2.5rem;margin:8px 0 12px}.contact p{color:#635461;line-height:1.7}
+.contact-card{background:white;border:1px solid #f5c9dc;padding:24px;border-radius:24px}
+.contact-card label{display:block;font-size:.88rem;font-weight:800;margin:13px 0 6px}
+.contact-card input,.contact-card textarea,.contact-card select{width:100%;padding:12px;border:1px solid #e7cfdb;border-radius:11px;font:inherit;background:#fffafd}
+.contact-card textarea{min-height:90px;resize:vertical}
+.contact-card button{margin-top:15px;width:100%;border:0;cursor:pointer;font:inherit}
+footer{background:#262129;color:#f9eaf1;padding:24px;text-align:center;font-size:.9rem}
+footer span{color:#ff80b7}
+@media(max-width:760px){nav{display:none}.hero-inner{grid-template-columns:1fr;padding-top:48px}.art{min-height:300px}.products{grid-template-columns:1fr}.product-art{height:240px}.banner{display:block;padding:28px}.banner .pill{margin-top:20px}.features{grid-template-columns:1fr}.contact-inner{grid-template-columns:1fr}h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="logo" href="#inicio">LA <span>BONITA.</span></a>
+    <nav><a href="#coleccion">Colección</a><a href="#nosotros">Nosotros</a><a href="#contacto">Pedidos</a></nav>
+    <a class="pill" href="#contacto">¡Quiero una! ♡</a>
+  </div>
+</header>
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Tu estilo, tu actitud ✦</div>
+      <h1>Viste bonito.<br><span>Siéntete tú.</span></h1>
+      <p>En <b>La Bonita</b> encontrarás playeras para hombre y mujer, cómodas, versátiles y listas para acompañarte todos los días. ¡Dale un toque bonito a tu outfit!</p>
+      <div class="hero-actions"><a class="pill" href="#coleccion">Ver playeras ↗</a><a class="secondary" href="#nosotros">Conoce La Bonita</a></div>
+    </div>
+    <div class="art" aria-label="Ilustración decorativa de una playera rosa">
+      <div class="blob"></div>
+      <div class="shirt"><svg viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg"><path d="M68 20 L91 9 Q110 29 129 9 L152 20 L207 57 L178 99 L151 83 L151 225 Q110 239 69 225 L69 83 L42 99 L13 57 Z" fill="#fff8fc" stroke="#6f2948" stroke-width="4" stroke-linejoin="round"/><path d="M91 10 Q91 43 110 43 Q129 43 129 10" fill="none" stroke="#6f2948" stroke-width="4"/><path d="M110 91 C92 72 75 98 110 121 C145 98 128 72 110 91Z" fill="#ff4f9a"/></svg></div>
+      <div class="sticker one">♡ Bonita por<br>dentro y fuera</div><div class="sticker two">Estilo para todos ✨</div>
+    </div>
+  </div>
+</section>
+<section class="section" id="coleccion">
+  <div class="section-heading"><div class="kicker">La colección</div><h2>Encuentra tu favorita 💗</h2><p>Ideas de estilos para inspirarte. Precio de referencia: <b>$180 MXN por playera</b>.</p></div>
+  <div class="products">
+    <article class="product"><div class="product-art pink"><svg class="mini-shirt" viewBox="0 0 150 170" xmlns="http://www.w3.org/2000/svg"><path d="M47 17 L62 9 Q75 23 88 9 L103 17 L140 44 L120 73 L103 61 L103 159 Q75 166 47 159 L47 61 L30 73 L10 44Z" fill="#ff80b5" stroke="#8d315c" stroke-width="3" stroke-linejoin="round"/><path d="M62 10 Q62 30 75 30 Q88 30 88 10" fill="none" stroke="#8d315c" stroke-width="3"/><path d="M75 75 C62 61 50 81 75 98 C100 81 88 61 75 75Z" fill="white"/></svg></div><h3>Playera rosa</h3><p class="desc">Un toque dulce y alegre para tu día.</p><div class="price-row"><span class="price">$180</span><button class="order" onclick="choose('Playera rosa')">Me interesa</button></div></article>
+    <article class="product"><div class="product-art white"><svg class="mini-shirt" viewBox="0 0 150 170" xmlns="http://www.w3.org/2000/svg"><path d="M47 17 L62 9 Q75 23 88 9 L103 17 L140 44 L120 73 L103 61 L103 159 Q75 166 47 159 L47 61 L30 73 L10 44Z" fill="#fff" stroke="#b4a6b0" stroke-width="3" stroke-linejoin="round"/><path d="M62 10 Q62 30 75 30 Q88 30 88 10" fill="none" stroke="#b4a6b0" stroke-width="3"/><path d="M75 75 C62 61 50 81 75 98 C100 81 88 61 75 75Z" fill="#ff4f9a"/></svg></div><h3>Playera clásica</h3><p class="desc">Sencilla, combinable y siempre en tendencia.</p><div class="price-row"><span class="price">$180</span><button class="order" onclick="choose('Playera clásica')">Me interesa</button></div></article>
+    <article class="product"><div class="product-art black"><svg class="mini-shirt" viewBox="0 0 150 170" xmlns="http://www.w3.org/2000/svg"><path d="M47 17 L62 9 Q75 23 88 9 L103 17 L140 44 L120 73 L103 61 L103 159 Q75 166 47 159 L47 61 L30 73 L10 44Z" fill="#29242b" stroke="#f3c5d8" stroke-width="3" stroke-linejoin="round"/><path d="M62 10 Q62 30 75 30 Q88 30 88 10" fill="none" stroke="#f3c5d8" stroke-width="3"/><path d="M75 75 C62 61 50 81 75 98 C100 81 88 61 75 75Z" fill="#ff80b5"/></svg></div><h3>Playera urbana</h3><p class="desc">Un básico con personalidad para cualquier ocasión.</p><div class="price-row"><span class="price">$180</span><button class="order" onclick="choose('Playera urbana')">Me interesa</button></div></article>
+  </div>
+</section>
+<section class="section" id="nosotros">
+  <div class="banner"><div><h2>Pequeño emprendimiento,<br>grandes sueños. ✨</h2><p>La Bonita nace con ganas de ofrecer playeras a buen precio y dar un servicio amable. Cada compra nos ayuda a seguir creciendo y traer más opciones para ti.</p></div><a class="pill" href="#contacto">Apoya el emprendimiento ♡</a></div>
+  <div class="features"><div class="feature"><div class="emoji">💗</div><h3>Estilo para todos</h3><p>Opciones para hombre y mujer que puedes combinar a tu manera.</p></div><div class="feature"><div class="emoji">🏷️</div><h3>Precio claro</h3><p>Precio de referencia de $180 MXN por playera.</p></div><div class="feature"><div class="emoji">🛍️</div><h3>Compra con confianza</h3><p>Escríbenos para consultar tallas, disponibilidad y entregas.</p></div></div>
+</section>
+<section class="contact" id="contacto"><div class="contact-inner"><div><div class="kicker">Hagamos tu pedido</div><h2>¿Cuál va contigo?</h2><p>Déjanos los detalles de la playera que te interesa. Este formulario prepara un mensaje para que puedas copiarlo o enviarlo por tu medio de contacto preferido.</p><p><b>Precio:</b> $180 MXN por playera<br><b>Marca:</b> La Bonita</p></div>
+<form class="contact-card" onsubmit="sendOrder(event)"><label for="nombre">Tu nombre</label><input id="nombre" required placeholder="¿Cómo te llamas?"><label for="producto">Playera que te interesa</label><select id="producto"><option>Playera rosa</option><option>Playera clásica</option><option>Playera urbana</option><option>Quiero ver otros modelos</option></select><label for="talla">Talla</label><select id="talla"><option>Por confirmar</option><option>Chica</option><option>Mediana</option><option>Grande</option><option>Extra grande</option></select><label for="mensaje">Detalles adicionales</label><textarea id="mensaje" placeholder="Cantidad, color o pregunta..."></textarea><button class="pill" type="submit">Preparar mi pedido ♡</button><p id="feedback" aria-live="polite" style="font-size:.9rem;margin-bottom:0"></p></form></div></section>
+</main>
+<footer>Hecho con <span>♥</span> para <b>La Bonita</b> · Tu playera, tu actitud.</footer>
+<script>
+function choose(product){document.getElementById('producto').value=product;document.getElementById('contacto').scrollIntoView({behavior:'smooth'});}
+function sendOrder(e){e.preventDefault();const nombre=document.getElementById('nombre').value.trim();const producto=document.getElementById('producto').value;const talla=document.getElementById('talla').value;const mensaje=document.getElementById('mensaje').value.trim();const text=`Hola, La Bonita. Soy ${nombre} y me interesa: ${producto}. Talla: ${talla}. Detalles: ${mensaje||'Por confirmar'}. ¿Me pueden compartir disponibilidad y entrega?`;const box=document.getElementById('feedback');if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>{box.textContent='¡Mensaje copiado! Ahora puedes pegarlo en WhatsApp o en tu chat preferido.'}).catch(()=>{box.textContent=text})}else{box.textContent=text}}
+</script>
+</body>
+</html>
